@@ -1,5 +1,5 @@
 /**
- * AI Analyzer - Chat Logic
+ * Expenova - Chat Logic
  * Handles user interaction and AI responses
  */
 

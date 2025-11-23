@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Analyzer - Analyze</title>
+    <title>Expenova - Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="dark-mode">
+<body>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top glass-nav">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <i class="bi bi-cpu-fill me-2"></i>AI Analyzer
+                <i class="bi bi-cpu-fill me-2"></i>Expenova
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -25,12 +25,13 @@
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="analyze.html">Analyze</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="analyze.html">Analyze</a></li>
                     <li class="nav-item"><a class="nav-link" href="speak.html">Speak With Me</a></li>
                 </ul>
                 <div class="d-flex align-items-center gap-3">
-                    <button id="theme-toggle" class="btn btn-link text-decoration-none text-reset p-0">
-                        <i class="bi bi-sun-fill fs-5"></i>
+                    <button id="theme-toggle" class="btn btn-link text-decoration-none text-reset p-0"
+                        title="Toggle theme">
+                        <i id="theme-icon" class="bi bi-sun-fill fs-5"></i>
                     </button>
                     <a href="login.html" class="btn btn-outline-custom btn-sm">Login</a>
                 </div>
@@ -43,20 +44,25 @@
         <div class="container pt-4">
             <div class="row g-4">
                 <!-- Input Form -->
-                <div class="col-lg-4">
+                <div class="col-lg-4 fade-in-up">
                     <div class="glass-card p-4">
                         <h4 class="fw-bold mb-4">Add Expense</h4>
                         <form id="expenseForm">
                             <div class="mb-3">
-                                <label for="itemName" class="form-label">Item Name</label>
-                                <input type="text" class="form-control" id="itemName" required>
+                                <label for="itemName" class="form-label small text-muted text-uppercase fw-bold">Item
+                                    Name</label>
+                                <input type="text" class="form-control" id="itemName" placeholder="e.g. Coffee"
+                                    required>
                             </div>
                             <div class="mb-3">
-                                <label for="itemPrice" class="form-label">Price</label>
-                                <input type="number" class="form-control" id="itemPrice" min="0" step="0.01" required>
+                                <label for="itemPrice"
+                                    class="form-label small text-muted text-uppercase fw-bold">Price</label>
+                                <input type="number" class="form-control" id="itemPrice" min="0" step="0.01"
+                                    placeholder="0.00" required>
                             </div>
                             <div class="mb-3">
-                                <label for="itemCategory" class="form-label">Category</label>
+                                <label for="itemCategory"
+                                    class="form-label small text-muted text-uppercase fw-bold">Category</label>
                                 <select class="form-select form-control" id="itemCategory" required>
                                     <option value="Food">Food</option>
                                     <option value="Transport">Transport</option>
@@ -67,16 +73,22 @@
                                 </select>
                             </div>
                             <div class="mb-4">
-                                <label for="itemDate" class="form-label">Date</label>
+                                <label for="itemDate"
+                                    class="form-label small text-muted text-uppercase fw-bold">Date</label>
                                 <input type="date" class="form-control" id="itemDate" required>
                             </div>
-                            <button type="submit" class="btn btn-primary-custom w-100">Add Expense</button>
+                            <button type="submit" class="btn btn-primary-custom w-100">
+                                <i class="bi bi-plus-lg me-2"></i>Add Expense
+                            </button>
                         </form>
                     </div>
 
                     <!-- AI Feedback Card -->
-                    <div class="glass-card p-4 mt-4">
-                        <h5 class="fw-bold mb-3"><i class="bi bi-stars text-warning me-2"></i>AI Insight</h5>
+                    <div class="glass-card p-4 mt-4 position-relative overflow-hidden">
+                        <div class="position-absolute top-0 end-0 p-3 opacity-25">
+                            <i class="bi bi-stars fs-1 text-warning"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3 text-warning"><i class="bi bi-stars me-2"></i>AI Insight</h5>
                         <div id="aiFeedback" class="small opacity-75">
                             Start adding expenses to get AI-powered insights on your spending habits.
                         </div>
@@ -84,28 +96,28 @@
                 </div>
 
                 <!-- Charts & List -->
-                <div class="col-lg-8">
+                <div class="col-lg-8 fade-in-up delay-100">
                     <!-- Stats Cards -->
                     <div class="row g-3 mb-4">
                         <div class="col-md-6">
-                            <div class="glass-card p-3 d-flex justify-content-between align-items-center">
+                            <div class="glass-card p-4 d-flex justify-content-between align-items-center">
                                 <div>
-                                    <p class="small opacity-75 mb-1">Total Spent</p>
-                                    <h3 class="fw-bold mb-0" id="totalSpent">Rs. 0.00</h3>
+                                    <p class="small text-muted text-uppercase fw-bold mb-1">Total Spent</p>
+                                    <h2 class="fw-bold mb-0 text-gradient" id="totalSpent">Rs. 0.00</h2>
                                 </div>
-                                <div class="icon-box bg-primary bg-opacity-25 p-3 rounded-circle">
-                                    <i class="bi bi-currency-dollar text-primary fs-4"></i>
+                                <div class="icon-box bg-primary bg-opacity-10 p-3 rounded-circle text-primary">
+                                    <i class="bi bi-currency-dollar fs-3"></i>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="glass-card p-3 d-flex justify-content-between align-items-center">
+                            <div class="glass-card p-4 d-flex justify-content-between align-items-center">
                                 <div>
-                                    <p class="small opacity-75 mb-1">Most Spent Category</p>
-                                    <h3 class="fw-bold mb-0" id="topCategory">-</h3>
+                                    <p class="small text-muted text-uppercase fw-bold mb-1">Top Category</p>
+                                    <h2 class="fw-bold mb-0" id="topCategory">-</h2>
                                 </div>
-                                <div class="icon-box bg-secondary bg-opacity-25 p-3 rounded-circle">
-                                    <i class="bi bi-pie-chart text-secondary fs-4"></i>
+                                <div class="icon-box bg-secondary bg-opacity-10 p-3 rounded-circle text-secondary">
+                                    <i class="bi bi-pie-chart fs-3"></i>
                                 </div>
                             </div>
                         </div>
@@ -114,8 +126,9 @@
                     <!-- Charts -->
                     <div class="row g-4 mb-4 justify-content-center">
                         <div class="col-md-8">
-                            <div class="glass-card p-3">
-                                <h6 class="fw-bold mb-3 text-center">Category Breakdown</h6>
+                            <div class="glass-card p-4">
+                                <h6 class="fw-bold mb-4 text-center text-uppercase small tracking-wider">Category
+                                    Breakdown</h6>
                                 <div style="max-height: 300px; display: flex; justify-content: center;">
                                     <canvas id="categoryChart"></canvas>
                                 </div>
@@ -123,20 +136,18 @@
                         </div>
                     </div>
 
-
-
                     <!-- Expense List -->
                     <div class="glass-card p-4">
-                        <h5 class="fw-bold mb-3">Recent Expenses</h5>
+                        <h5 class="fw-bold mb-4">Recent Expenses</h5>
                         <div class="table-responsive">
-                            <table class="table table-borderless text-white mb-0">
-                                <thead>
-                                    <tr class="border-bottom border-light border-opacity-25">
-                                        <th>Date</th>
-                                        <th>Item</th>
-                                        <th>Category</th>
-                                        <th>Price</th>
-                                        <th>Action</th>
+                            <table class="table table-borderless text-white mb-0 align-middle">
+                                <thead class="border-bottom border-light border-opacity-10">
+                                    <tr>
+                                        <th class="py-3 text-muted small text-uppercase">Date</th>
+                                        <th class="py-3 text-muted small text-uppercase">Item</th>
+                                        <th class="py-3 text-muted small text-uppercase">Category</th>
+                                        <th class="py-3 text-muted small text-uppercase">Price</th>
+                                        <th class="py-3 text-muted small text-uppercase text-end">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody id="expenseTableBody">
@@ -150,12 +161,13 @@
         </div>
     </section>
 
-    <footer class="mt-auto py-3">
+    <!-- Footer -->
+    <footer>
         <div class="container text-center">
             <div class="mb-2">
-                <i class="bi bi-cpu-fill me-2"></i><span class="fw-bold">AI Analyzer</span>
+                <i class="bi bi-cpu-fill me-2 text-primary"></i><span class="fw-bold">Expenova</span>
             </div>
-            <p class="small mb-0">&copy; 2025 AI Analyzer. All rights reserved.</p>
+            <p class="small mb-0 opacity-50">&copy; 2025 Expenova. All rights reserved.</p>
         </div>
     </footer>
 

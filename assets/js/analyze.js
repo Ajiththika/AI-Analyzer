@@ -1,5 +1,5 @@
 /**
- * AI Analyzer - Analyze Page Logic
+ * Expenova - Analyze Page Logic
  * Handles expense tracking, chart updates, and AI feedback
  */
 

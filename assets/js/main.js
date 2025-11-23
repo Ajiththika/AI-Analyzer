@@ -1,51 +1,37 @@
-/**
- * AI Analyzer - Main Logic
- * Handles global functionality like Theme Toggle and Navbar
- */
+// Theme Toggle Functionality
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+const themeIcon = document.getElementById('theme-icon');
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Theme Toggle Logic
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const body = document.body;
-    const icon = themeToggleBtn?.querySelector('i');
+// Load saved theme from localStorage
+const savedTheme = localStorage.getItem('theme') || 'dark';
+body.classList.add(savedTheme + '-mode');
+updateThemeIcon(savedTheme);
 
-    // Check localStorage for saved theme
-    const savedTheme = localStorage.getItem('theme') || 'dark-mode';
-    body.classList.add(savedTheme);
-    updateIcon(savedTheme);
-
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
-            if (body.classList.contains('dark-mode')) {
-                body.classList.replace('dark-mode', 'light-mode');
-                localStorage.setItem('theme', 'light-mode');
-                updateIcon('light-mode');
-            } else {
-                body.classList.replace('light-mode', 'dark-mode');
-                localStorage.setItem('theme', 'dark-mode');
-                updateIcon('dark-mode');
-            }
-        });
-    }
-
-    function updateIcon(theme) {
-        if (!icon) return;
-        if (theme === 'dark-mode') {
-            icon.classList.remove('bi-moon-fill');
-            icon.classList.add('bi-sun-fill');
+// Toggle theme on button click
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+            localStorage.setItem('theme', 'light');
+            updateThemeIcon('light');
         } else {
-            icon.classList.remove('bi-sun-fill');
-            icon.classList.add('bi-moon-fill');
-        }
-    }
-
-    // Navbar Active State
-    const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath.split('/').pop()) {
-            link.classList.add('active');
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+            updateThemeIcon('dark');
         }
     });
-});
+}
+
+// Update icon based on theme
+function updateThemeIcon(theme) {
+    if (themeIcon) {
+        if (theme === 'dark') {
+            themeIcon.className = 'bi bi-sun-fill fs-5';
+        } else {
+            themeIcon.className = 'bi bi-moon-fill fs-5';
+        }
+    }
+}

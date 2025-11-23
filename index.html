@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Analyzer - Home</title>
+    <title>Expenova - Professional Financial Insights</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="dark-mode">
+<body>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top glass-nav">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <i class="bi bi-cpu-fill me-2"></i>AI Analyzer
+                <i class="bi bi-cpu-fill me-2"></i>Expenova
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link active" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
@@ -40,8 +40,9 @@
                     </li>
                 </ul>
                 <div class="d-flex align-items-center gap-3">
-                    <button id="theme-toggle" class="btn btn-link text-decoration-none text-reset p-0">
-                        <i class="bi bi-sun-fill fs-5"></i>
+                    <button id="theme-toggle" class="btn btn-link text-decoration-none text-reset p-0"
+                        title="Toggle theme">
+                        <i id="theme-icon" class="bi bi-sun-fill fs-5"></i>
                     </button>
                     <a href="login.html" class="btn btn-outline-custom btn-sm">Login</a>
                 </div>
@@ -50,27 +51,48 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section d-flex align-items-center min-vh-100 pt-5">
+    <section class="hero-section d-flex align-items-center min-vh-100">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="col-lg-6 mb-5 mb-lg-0 fade-in-up">
+                    <span
+                        class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 rounded-pill border border-primary border-opacity-25">
+                        <i class="bi bi-stars me-1"></i> AI-Powered Financial Intelligence
+                    </span>
                     <h1 class="display-3 fw-bold mb-4">
-                        Unlock Insights with <span class="text-gradient">AI Power</span>
+                        Master Your Money with <span class="text-gradient">Intelligent Insights</span>
                     </h1>
                     <p class="lead mb-5 opacity-75">
-                        Track expenses, analyze trends, and get personalized financial advice powered by advanced AI
-                        algorithms.
+                        Experience the future of personal finance. Track expenses, visualize trends, and receive
+                        personalized advice from our advanced AI advisor.
                     </p>
                     <div class="d-flex gap-3">
                         <a href="analyze.html" class="btn btn-primary-custom btn-lg">Start Analyzing</a>
                         <a href="speak.html" class="btn btn-outline-custom btn-lg">Chat with AI</a>
                     </div>
+
+                    <div class="mt-5 d-flex gap-4 opacity-75">
+                        <div>
+                            <h5 class="mb-0 fw-bold">10k+</h5>
+                            <small>Users</small>
+                        </div>
+                        <div>
+                            <h5 class="mb-0 fw-bold">98%</h5>
+                            <small>Accuracy</small>
+                        </div>
+                        <div>
+                            <h5 class="mb-0 fw-bold">24/7</h5>
+                            <small>AI Support</small>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="glass-card p-4 text-center">
+                <div class="col-lg-6 fade-in-up delay-200">
+                    <div class="glass-card p-4 text-center position-relative">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary opacity-10 rounded-4"
+                            style="filter: blur(40px); z-index: -1;"></div>
                         <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="AI Analysis"
-                            class="img-fluid"
-                            style="max-height: 400px; filter: drop-shadow(0 0 20px rgba(108, 99, 255, 0.3));">
+                            class="img-fluid position-relative z-1"
+                            style="max-height: 450px; filter: drop-shadow(0 20px 40px rgba(99, 102, 241, 0.3)); animation: float 6s ease-in-out infinite;">
                     </div>
                 </div>
             </div>
@@ -78,57 +100,53 @@
     </section>
 
     <!-- Features Section -->
-    <section class="py-5">
+    <section class="py-5 mb-5">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Our <span class="text-gradient">Analyzer Models</span></h2>
-                <p class="opacity-75">Choose the perfect tool for your needs</p>
+            <div class="text-center mb-5 fade-in-up">
+                <h2 class="display-5 fw-bold mb-3">Our <span class="text-gradient">Analyzer Models</span></h2>
+                <p class="opacity-75 lead">Choose the perfect tool for your financial journey</p>
             </div>
             <div class="row g-4">
                 <!-- Card 1 -->
-                <div class="col-md-4">
-                    <div class="glass-card p-4 h-100 text-center position-relative overflow-hidden"
+                <div class="col-md-4 fade-in-up delay-100">
+                    <div class="glass-card p-5 h-100 text-center position-relative overflow-hidden"
                         style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalExpense">
-                        <div class="mb-3">
-                            <i class="bi bi-wallet2 fs-1 text-primary"></i>
+                        <div class="feature-icon-wrapper">
+                            <i class="bi bi-wallet2 fs-2 text-primary"></i>
                         </div>
-                        <h4>Expense Tracker</h4>
-                        <p class="opacity-75 small">Track your daily spending and categorize expenses automatically.</p>
-                        <div class="mt-3">
-                            <span class="text-gradient fw-bold small">Learn More <i
-                                    class="bi bi-arrow-right"></i></span>
-                        </div>
+                        <h4 class="mb-3">Expense Tracker</h4>
+                        <p class="opacity-75 mb-4">Track your daily spending and categorize expenses automatically with
+                            precision.</p>
+                        <span class="text-gradient fw-bold small text-uppercase tracking-wider">Learn More <i
+                                class="bi bi-arrow-right ms-1"></i></span>
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div class="col-md-4">
-                    <div class="glass-card p-4 h-100 text-center position-relative overflow-hidden"
+                <div class="col-md-4 fade-in-up delay-200">
+                    <div class="glass-card p-5 h-100 text-center position-relative overflow-hidden"
                         style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalTrend">
-                        <div class="mb-3">
-                            <i class="bi bi-graph-up-arrow fs-1 text-success"></i>
+                        <div class="feature-icon-wrapper">
+                            <i class="bi bi-graph-up-arrow fs-2 text-secondary"></i>
                         </div>
-                        <h4>Trend Analysis</h4>
-                        <p class="opacity-75 small">Visualize your spending habits over time with interactive charts.
-                        </p>
-                        <div class="mt-3">
-                            <span class="text-gradient fw-bold small">Learn More <i
-                                    class="bi bi-arrow-right"></i></span>
-                        </div>
+                        <h4 class="mb-3">Trend Analysis</h4>
+                        <p class="opacity-75 mb-4">Visualize your spending habits over time with interactive, dynamic
+                            charts.</p>
+                        <span class="text-gradient fw-bold small text-uppercase tracking-wider">Learn More <i
+                                class="bi bi-arrow-right ms-1"></i></span>
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="col-md-4">
-                    <div class="glass-card p-4 h-100 text-center position-relative overflow-hidden"
+                <div class="col-md-4 fade-in-up delay-300">
+                    <div class="glass-card p-5 h-100 text-center position-relative overflow-hidden"
                         style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalAdvisor">
-                        <div class="mb-3">
-                            <i class="bi bi-robot fs-1 text-danger"></i>
+                        <div class="feature-icon-wrapper">
+                            <i class="bi bi-robot fs-2 text-danger"></i>
                         </div>
-                        <h4>AI Advisor</h4>
-                        <p class="opacity-75 small">Get personalized financial advice and budget recommendations.</p>
-                        <div class="mt-3">
-                            <span class="text-gradient fw-bold small">Learn More <i
-                                    class="bi bi-arrow-right"></i></span>
-                        </div>
+                        <h4 class="mb-3">AI Advisor</h4>
+                        <p class="opacity-75 mb-4">Get personalized financial advice and budget recommendations from AI.
+                        </p>
+                        <span class="text-gradient fw-bold small text-uppercase tracking-wider">Learn More <i
+                                class="bi bi-arrow-right ms-1"></i></span>
                     </div>
                 </div>
             </div>
@@ -145,12 +163,15 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-center">
-                    <i class="bi bi-wallet2 fs-1 text-primary mb-3 d-block"></i>
-                    <p>Our advanced Expense Tracker allows you to input daily costs, categorize them, and see a
+                <div class="modal-body text-center p-4">
+                    <div class="feature-icon-wrapper mx-auto mb-4">
+                        <i class="bi bi-wallet2 fs-2 text-primary"></i>
+                    </div>
+                    <p class="lead opacity-75">Our advanced Expense Tracker allows you to input daily costs, categorize
+                        them, and see a
                         breakdown of where your money goes. It's the first step to financial freedom.</p>
                 </div>
-                <div class="modal-footer border-0 justify-content-center">
+                <div class="modal-footer border-0 justify-content-center pb-4">
                     <a href="analyze.html" class="btn btn-primary-custom">Use This Analyzer</a>
                 </div>
             </div>
@@ -166,12 +187,15 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-center">
-                    <i class="bi bi-graph-up-arrow fs-1 text-success mb-3 d-block"></i>
-                    <p>Visualize your financial health with dynamic charts. See monthly trends, category distributions,
+                <div class="modal-body text-center p-4">
+                    <div class="feature-icon-wrapper mx-auto mb-4">
+                        <i class="bi bi-graph-up-arrow fs-2 text-secondary"></i>
+                    </div>
+                    <p class="lead opacity-75">Visualize your financial health with dynamic charts. See monthly trends,
+                        category distributions,
                         and identify spending spikes instantly.</p>
                 </div>
-                <div class="modal-footer border-0 justify-content-center">
+                <div class="modal-footer border-0 justify-content-center pb-4">
                     <a href="analyze.html" class="btn btn-primary-custom">Use This Analyzer</a>
                 </div>
             </div>
@@ -187,12 +211,15 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-center">
-                    <i class="bi bi-robot fs-1 text-danger mb-3 d-block"></i>
-                    <p>Chat with our AI to get real-time advice. Ask questions like "How can I save more on food?" or
+                <div class="modal-body text-center p-4">
+                    <div class="feature-icon-wrapper mx-auto mb-4">
+                        <i class="bi bi-robot fs-2 text-danger"></i>
+                    </div>
+                    <p class="lead opacity-75">Chat with our AI to get real-time advice. Ask questions like "How can I
+                        save more on food?" or
                         "Am I spending too much on entertainment?"</p>
                 </div>
-                <div class="modal-footer border-0 justify-content-center">
+                <div class="modal-footer border-0 justify-content-center pb-4">
                     <a href="speak.html" class="btn btn-primary-custom">Use This Analyzer</a>
                 </div>
             </div>
@@ -200,12 +227,12 @@
     </div>
 
     <!-- Footer -->
-    <footer class="mt-auto py-3">
+    <footer>
         <div class="container text-center">
             <div class="mb-2">
-                <i class="bi bi-cpu-fill me-2"></i><span class="fw-bold">AI Analyzer</span>
+                <i class="bi bi-cpu-fill me-2 text-primary"></i><span class="fw-bold">Expenova</span>
             </div>
-            <p class="small mb-0">&copy; 2025 AI Analyzer. All rights reserved.</p>
+            <p class="small mb-0 opacity-50">&copy; 2025 Expenova. All rights reserved.</p>
         </div>
     </footer>
 
