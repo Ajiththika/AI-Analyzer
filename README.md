@@ -178,25 +178,35 @@ AI-Analyzer/
 
 #### Home Page (Dark Mode)
 *Professional hero section with glassmorphism cards and feature showcase*
+[![Alt text](./assets/images/Home%201)]
+[![Alt text](./assets/images/Home%202)]
 
-#### Analyze Dashboard (Dark Mode)
+#### About Page
+*Deatails of our page*
+[![Alt text](./assets/images/About%201)]
+[![Alt text](./assets/images/About%202)]
+
+#### Analyze Dashboard 
 *Expense tracking interface with charts and AI insights*
+[![Alt text](./assets/images/Analyze%201)]
+[![Alt text](./assets/images/Analyze%202)]
 
-#### Chat Interface (Dark Mode)
+#### Chat Interface 
 *AI advisor chat with modern messaging UI*
+[![Alt text](./assets/images/Chatbox%201)]
+[![Alt text](./assets/images/chatbox%202)]
 
-#### Login Page (Light Mode)
+#### Login Page 
 *Clean authentication form with glassmorphism*
+[![Alt text](./assets/images/login%201)]
+[![Alt text](./assets/images/login%202)]
 
 ### Mobile Views
 
 #### Mobile Navigation
 *Responsive hamburger menu with collapsible navigation*
-
-#### Mobile Dashboard
-*Touch-optimized expense tracking on mobile devices*
-
-> **Note**: Add actual screenshots here after deployment
+[![Alt text](./assets/images/mobile%20response%201)]
+[![Alt text](./assets/images/mobile%20response%202)]
 
 ---
 
@@ -205,7 +215,7 @@ AI-Analyzer/
 ### Local Setup
 1. Clone the repository
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Ajiththika/AI-Analyzer.git
    cd AI-Analyzer
    ```
 
@@ -224,7 +234,7 @@ AI-Analyzer/
 
 ## Live Demo
 
-**GitHub Pages Link**: [Insert Your Live Link Here]
+**GitHub Pages Link**: https://ajiththika.github.io/AI-Analyzer/
 
 ---
 
@@ -240,10 +250,8 @@ AI-Analyzer/
 
 ## Credits
 
-**Developed by**: [Your Name/Team Name]  
-**Course**: [Course Name]  
-**Institution**: [Institution Name]  
-**Year**: 2025
+**Developed by**: Ajiththika & Sajiruban 
+**Project**: AI Expense Analyzer  
 
 ---
 
