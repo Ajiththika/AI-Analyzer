@@ -1,7 +1,7 @@
-# Expenova - Professional Financial Insights Platform
+# AI Expense Analyzer - Professional Financial Insights Platform
 
 ## Project Overview
-The **Expenova** is a professional, responsive web application designed to help users track their expenses, analyze spending trends, and receive personalized financial advice through an AI-powered chat interface. Built with a focus on UI/UX excellence, it features a premium glassmorphism aesthetic, animated backgrounds, dark/light mode toggle, and intuitive interactions.
+The **AI ExpenseAnalyzer** is a professional, responsive web application designed to help users track their expenses, analyze spending trends, and receive personalized financial advice through an AI-powered chat interface. Built with a focus on UI/UX excellence, it features a premium glassmorphism aesthetic, animated backgrounds, dark/light mode toggle, and intuitive interactions.
 
 ---
 
@@ -102,7 +102,7 @@ small text → Outfit (300)
 ✅ **Professional UI/UX**
 - Advanced glassmorphism design
 - Animated gradient backgrounds
-- Smooth scroll animations (`fade-in-up`)
+- Smooth scroll animations 
 - Hover effects and micro-interactions
 
 ✅ **Dark/Light Mode Toggle**
@@ -178,35 +178,25 @@ AI-Analyzer/
 
 #### Home Page (Dark Mode)
 *Professional hero section with glassmorphism cards and feature showcase*
-[![Alt text](./assets/images/Home%201)]
-[![Alt text](./assets/images/Home%202)]
 
-#### About Page
-*Deatails of our page*
-[![Alt text](./assets/images/About%201)]
-[![Alt text](./assets/images/About%202)]
-
-#### Analyze Dashboard 
+#### Analyze Dashboard (Dark Mode)
 *Expense tracking interface with charts and AI insights*
-[![Alt text](./assets/images/Analyze%201)]
-[![Alt text](./assets/images/Analyze%202)]
 
-#### Chat Interface 
+#### Chat Interface (Dark Mode)
 *AI advisor chat with modern messaging UI*
-[![Alt text](./assets/images/Chatbox%201)]
-[![Alt text](./assets/images/chatbox%202)]
 
-#### Login Page 
+#### Login Page (Light Mode)
 *Clean authentication form with glassmorphism*
-[![Alt text](./assets/images/login%201)]
-[![Alt text](./assets/images/login%202)]
 
 ### Mobile Views
 
 #### Mobile Navigation
 *Responsive hamburger menu with collapsible navigation*
-[![Alt text](./assets/images/mobile%20response%201)]
-[![Alt text](./assets/images/mobile%20response%202)]
+
+#### Mobile Dashboard
+*Touch-optimized expense tracking on mobile devices*
+
+> **Note**: Add actual screenshots here after deployment
 
 ---
 
@@ -215,7 +205,7 @@ AI-Analyzer/
 ### Local Setup
 1. Clone the repository
    ```bash
-   git clone https://github.com/Ajiththika/AI-Analyzer.git
+   git clone <repository-url>
    cd AI-Analyzer
    ```
 
@@ -234,7 +224,7 @@ AI-Analyzer/
 
 ## Live Demo
 
-**GitHub Pages Link**: https://ajiththika.github.io/AI-Analyzer/
+**GitHub Pages Link**: (https://ajiththika.github.io/AI-Analyzer/)
 
 ---
 
@@ -246,19 +236,12 @@ AI-Analyzer/
 - ✅ Edge 90+
 - ✅ Mobile browsers (iOS Safari, Chrome Mobile)
 
----
+--- 
 
 ## Credits
 
-**Developed by**: Ajiththika & Sajiruban 
-**Project**: AI Expense Analyzer  
+**Developed by**: Ajiththika & Sajiruban
+**Project Name**: AI Expense Analyzer
 
 ---
 
-## License
-
-This project is created for educational purposes.
-
----
-
-**© 2025 Expenova. All rights reserved.**

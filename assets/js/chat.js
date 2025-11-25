@@ -7,42 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatForm = document.getElementById('chatForm');
     const chatInput = document.getElementById('chatInput');
     const chatContainer = document.getElementById('chatContainer');
-    const voiceBtn = document.getElementById('voiceBtn');
-
-    // Speech Recognition Setup
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    let recognition = null;
-
-    if (SpeechRecognition) {
-        recognition = new SpeechRecognition();
-        recognition.continuous = false;
-        recognition.lang = 'en-US';
-
-        recognition.onresult = (event) => {
-            const transcript = event.results[0][0].transcript;
-            chatInput.value = transcript;
-            handleUserMessage(transcript);
-        };
-
-        recognition.onerror = (event) => {
-            console.error('Speech recognition error', event.error);
-        };
-    } else {
-        voiceBtn.style.display = 'none';
-    }
-
-    voiceBtn.addEventListener('click', () => {
-        if (recognition) {
-            recognition.start();
-            voiceBtn.classList.add('text-danger'); // Visual cue
-        }
-    });
-
-    if (recognition) {
-        recognition.onend = () => {
-            voiceBtn.classList.remove('text-danger');
-        };
-    }
 
     // Chat Form Submit
     chatForm.addEventListener('submit', (e) => {
@@ -61,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             const response = generateAIResponse(message);
             addMessage(response, 'ai');
-            speakResponse(response);
         }, 1000);
     }
 
@@ -125,12 +88,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         return "I'm not sure about that. Try asking 'How much have I spent?' or 'Am I over my limit?'.";
-    }
-
-    function speakResponse(text) {
-        if ('speechSynthesis' in window) {
-            const utterance = new SpeechSynthesisUtterance(text);
-            window.speechSynthesis.speak(utterance);
-        }
     }
 });
