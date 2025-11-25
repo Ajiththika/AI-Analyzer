@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function generateAIResponse(input) {
         const lowerInput = input.toLowerCase();
-        const expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+        const expenses = []; // No local storage access
 
         // Calculate stats
         const total = expenses.reduce((sum, item) => sum + item.price, 0);

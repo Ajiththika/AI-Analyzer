@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const topCategoryEl = document.getElementById('topCategory');
     const aiFeedbackEl = document.getElementById('aiFeedback');
 
-    let expenses = JSON.parse(localStorage.getItem('expenses')) || [];
+    let expenses = [];
     let categoryChartInstance = null;
 
     // Initialize
@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         expenses.push(newItem);
-        saveExpenses();
         renderExpenses();
         updateStats();
         renderCharts();
@@ -75,15 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return 'text-danger';
     }
 
-    // Save to LocalStorage
-    function saveExpenses() {
-        localStorage.setItem('expenses', JSON.stringify(expenses));
-    }
-
     // Global delete function
     window.deleteExpense = function (id) {
         expenses = expenses.filter(e => e.id !== id);
-        saveExpenses();
         renderExpenses();
         updateStats();
         renderCharts();
