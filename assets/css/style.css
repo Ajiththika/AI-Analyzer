@@ -603,3 +603,30 @@ body.light-mode .navbar-toggler {
 body.light-mode .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2851, 65, 85, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+
+:root {
+      --glass-border: rgba(255,255,255,0.3);
+    }
+
+    /* Password requirements hidden at page load */
+    .requirements {
+      display: none;
+      font-size: 0.8rem;
+      margin-top: 5px;
+    }
+
+    .requirement {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: red;
+    }
+
+    .requirement.valid {
+      color: green;
+    }
+
+    .toggle-password {
+      cursor: pointer;
+      user-select: none;
+    }

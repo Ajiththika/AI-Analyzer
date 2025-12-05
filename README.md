@@ -123,7 +123,7 @@ small text → Outfit (300)
 - **HTML5**: Semantic structure, accessibility
 - **CSS3**: Custom properties, Flexbox, Grid, Animations, Media Queries
 - **Bootstrap 5**: Responsive layout, components, utilities
-- **JavaScript (Vanilla)**: Core logic, DOM manipulation, localStorage, theme toggle
+- **JavaScript (Vanilla)**: Core logic, DOM manipulation, theme toggle
 - **Chart.js**: Data visualization for expense analytics
 - **Google Fonts**: Space Grotesk & Outfit typography
 
@@ -170,30 +170,7 @@ AI-Analyzer/
 └── README.md               # Project Documentation
 ```
 
----
 
-## Screenshots
-
-### Desktop Views
-
-#### Home Page (Dark Mode)
-*Professional hero section with glassmorphism cards and feature showcase*
-
-#### Analyze Dashboard (Dark Mode)
-*Expense tracking interface with charts and AI insights*
-
-#### Chat Interface (Dark Mode)
-*AI advisor chat with modern messaging UI*
-
-#### Login Page (Light Mode)
-*Clean authentication form with glassmorphism*
-
-### Mobile Views
-
-#### Mobile Navigation
-*Responsive hamburger menu with collapsible navigation*
-
-#### Mobile Dashboard
 *Touch-optimized expense tracking on mobile devices*
 
 > **Note**: Add actual screenshots here after deployment
